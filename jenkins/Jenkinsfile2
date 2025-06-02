@@ -27,6 +27,7 @@ pipeline {
                                 mvn --version
                                 echo "Maven Settings: $MAVEN_SETTINGS_XML"
                                 java -version
+                                ls /usr/local/share/ca-certificates/
                            '''
                             sh 'mvn -Dmaven.test.skip=true clean package -s $MAVEN_SETTINGS_XML'
                             
