@@ -28,7 +28,7 @@ pipeline {
                                 echo "Maven Settings: $MAVEN_SETTINGS_XML"
                                 java -version
                                 ls /usr/local/share/ca-certificates/
-                                sudo ls /etc/ssl/certs/ | grep devdurjpd-certificate.cer
+                                ls /etc/ssl/certs/ | grep devdurjpd-certificate.cer
                                 update-alternatives --list java
                                 which java
                            '''
