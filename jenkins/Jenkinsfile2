@@ -67,10 +67,13 @@ pipeline {
                     echo "Jenkins Home: ${env.JENKINS_HOME}"
                     echo "Workspace: ${env.WORKSPACE}"
                     echo "path:-  ${env.JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/"
-                    def logOutput = sh(script: 'cat ${env.JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log', returnStdout: true).trim()
+                    def logOutput = sh(script: "cat ${env.JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log", returnStdout: true).trim()
+                    echo "After logoutput"
                     def searchTerm = "status code: 403"
                     def grepOutput = sh(script: "echo \"${logOutput}\" | grep \"${searchTerm}\"", returnStdout: true).trim()
+                    echo "After grepoutput"
                     def cleanedErrors = sh(script: "echo \"${grepOutput}\" | sed -E \"s/^.*\\\\[ERROR\\\\]//\"", returnStdout: true).trim()
+                     echo "After cleanedErrors"
                  //   echo "GrepOutput: ${grepOutput}"
                   //  echo "Cleaned Errors: ${cleanedErrors}"
                     echo "Write file in post build script"
