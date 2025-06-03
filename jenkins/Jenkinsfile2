@@ -1,7 +1,12 @@
 
 pipeline {
-    agent {
-         dockerfile true
+     agent 
+     {
+        dockerfile{
+            filename 'Dockerfile'
+            args '-v /var/lib/jenkins:/var/lib/jenkins'
+            reuseNode true
+        }
     }
    
     environment
