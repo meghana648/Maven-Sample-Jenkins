@@ -64,15 +64,16 @@ pipeline {
         always {
                 script {
                     echo "In post build script"
-                   // echo "Jenkins Home: ${env.JENKINS_HOME}"
-                   echo "Workspace: ${env.WORKSPACE}"
+                    echo "Jenkins Home: ${env.JENKINS_HOME}"
+                    echo "Workspace: ${env.WORKSPACE}"
+                    echo "path:-  ${env.JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/"
                     def logOutput = sh(script: 'cat ${env.JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log', returnStdout: true).trim()
                     def searchTerm = "status code: 403"
                     def grepOutput = sh(script: "echo \"${logOutput}\" | grep \"${searchTerm}\"", returnStdout: true).trim()
                     def cleanedErrors = sh(script: "echo \"${grepOutput}\" | sed -E \"s/^.*\\\\[ERROR\\\\]//\"", returnStdout: true).trim()
                  //   echo "GrepOutput: ${grepOutput}"
                   //  echo "Cleaned Errors: ${cleanedErrors}"
-                   echo "Write file in post build script"
+                    echo "Write file in post build script"
                     writeFile file: '${env.WORKSPACE}/captured_urls_403.txt', text: cleanedErrors   
                     echo "Write the output to captured_urls_403.txt file"
                 }
