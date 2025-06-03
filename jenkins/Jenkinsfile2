@@ -69,8 +69,6 @@ pipeline {
         always {
                 script {
                     echo "In post build script"
-                    echo "Jenkins Home: ${env.JENKINS_HOME}"
-                    echo "Workspace: ${env.WORKSPACE}"
                     echo "path:-  ${env.JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/"
                     def logOutput = sh(script: "cat ${env.JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_NUMBER}/log", returnStdout: true).trim()
                     echo "After logoutput"
@@ -82,7 +80,7 @@ pipeline {
                  //   echo "GrepOutput: ${grepOutput}"
                   //  echo "Cleaned Errors: ${cleanedErrors}"
                     echo "Write file in post build script"
-                    writeFile file: '${env.WORKSPACE}/captured_urls_403.txt', text: cleanedErrors   
+                    writeFile file: "${env.WORKSPACE}/captured_urls_403.txt", text: cleanedErrors   
                     echo "Write the output to captured_urls_403.txt file"
                 }
           //  cleanWs()
