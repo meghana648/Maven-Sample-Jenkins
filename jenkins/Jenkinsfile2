@@ -21,8 +21,6 @@ pipeline {
                 echo $WORKSPACE ${WORKSPACE}
                 echo $JOB_NAME ${JOB_NAME}
                 echo $BUILD_NUMBER ${BUILD_NUMBER}
-                echo $JENKINS_HOME ${JENKINS_HOME} 
-                echo "Jenkins Home: ${env.JENKINS_HOME}"
                 '''
             }
         }
