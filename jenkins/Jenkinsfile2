@@ -9,6 +9,18 @@ pipeline {
         gitURL="https://github.com/meghana648/Maven-Sample-Jenkins.git"
     }
     stages {
+        stage('Print Env Variables') {
+            steps {
+                echo "Print Env Variables"
+                sh ''' 
+                printenv
+                echo $WORKSPACE ${WORKSPACE}
+                echo $JOB_NAME ${JOB_NAME}
+                echo $BUILD_NUMBER ${BUILD_NUMBER}
+                echo $JENKINS_HOME ${JENKINS_HOME} 
+                '''
+            }
+        }
         stage('Checkout Source Code') {
             steps {
                 git branch: 'main', url: env.gitURL // Replace with your repo URL
