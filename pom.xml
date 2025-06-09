@@ -22,7 +22,7 @@
     <dependency>
       <groupId>org.elasticsearch</groupId>
       <artifactId>elasticsearch-simdvec</artifactId>
-      <version>8.17.1</version>
+      <version>9.0.2</version>
       <classifier>sources</classifier>
     </dependency>
     <dependency>
