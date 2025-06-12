@@ -1,6 +1,6 @@
 package com.mycompany.app;
 import org.elasticsearch.common.vector.SimdVectorProcessor;
-import org.elasticsearch.common.vector.Vector;
+//import org.elasticsearch.common.vector.Vector;
 
 /**
  * Hello world!
