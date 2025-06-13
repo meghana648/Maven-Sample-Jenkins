@@ -15,6 +15,22 @@
     </dependency>
     <dependency>
       <groupId>org.elasticsearch</groupId>
+      <artifactId>elasticsearch</artifactId>
+      <version>8.10.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.elasticsearch</groupId>
+      <artifactId>elasticsearch-core</artifactId>
+      <version>8.17.1</version>
+      <classifier>javadoc</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.elasticsearch</groupId>
+      <artifactId>elasticsearch-core</artifactId>
+      <version>8.17.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.elasticsearch</groupId>
       <artifactId>elasticsearch-lz4</artifactId>
       <version>8.17.1</version>
       <classifier>javadoc</classifier>
