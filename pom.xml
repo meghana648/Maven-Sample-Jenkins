@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.mycompany.app</groupId>
+  <groupId>com.sample.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
@@ -12,22 +12,6 @@
       <artifactId>elasticsearch-logging</artifactId>
       <version>8.17.1</version>
       <classifier>sources</classifier>
-    </dependency>
-    <dependency>
-      <groupId>org.elasticsearch</groupId>
-      <artifactId>elasticsearch</artifactId>
-      <version>8.10.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.elasticsearch</groupId>
-      <artifactId>elasticsearch-core</artifactId>
-      <version>8.17.1</version>
-      <classifier>javadoc</classifier>
-    </dependency>
-    <dependency>
-      <groupId>org.elasticsearch</groupId>
-      <artifactId>elasticsearch-core</artifactId>
-      <version>8.17.1</version>
     </dependency>
     <dependency>
       <groupId>org.elasticsearch</groupId>
@@ -75,7 +59,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>com.mycompany.app.App</mainClass>
+              <mainClass>com.sample.app.App</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -96,7 +80,7 @@
                   <version>[3.9.2,)</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
-                  <version>[17,)</version>
+                  <version>[8,)</version>
                 </requireJavaVersion>
               </rules>
             </configuration>
@@ -107,19 +91,18 @@
   </build>
   <repositories>
     <repository>
-        <id>devdurjpd-artifactory</id>
-        <url>https://devdurjpd.artifactory.cec.lab.emc.com:443/artifactory/global-maven-central-virtual/</url>
+        <id>durjpd-artifactory</id>
+        <url>https://durjpd.artifactory.cec.lab.emc.com:443/artifactory/global-maven-central-virtual/</url>
         <snapshots>
             <enabled>false</enabled>
         </snapshots>
     </repository>
     <repository>
-        <id>devdurjpd-snapshots</id>
-        <url>https://devdurjpd.artifactory.cec.lab.emc.com:443/artifactory/global-maven-central-virtual/</url>
+        <id>durjpd-snapshots</id>
+        <url>https://durjpd.artifactory.cec.lab.emc.com:443/artifactory/global-maven-central-virtual/</url>
         <releases>
             <enabled>false</enabled>
         </releases>
     </repository>
 </repositories>
 </project>
-
